@@ -27,7 +27,7 @@ public class ProductFunction {
      * More details: https://aka.ms/functions_authorization_keys
      */
     @FunctionName("Products")
-    public HttpResponseMessage run(@HttpTrigger(name = "req", methods = {HttpMethod.GET}) HttpRequestMessage<Optional<String>> request,final ExecutionContext context) {
+    public HttpResponseMessage run(@HttpTrigger(name = "req", methods = {HttpMethod.GET},authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,final ExecutionContext context) {
         final ObjectMapper mapper = new ObjectMapper();
         HttpResponseMessage response;
 
