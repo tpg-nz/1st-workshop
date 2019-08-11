@@ -33,7 +33,7 @@ public class ProductFunction {
 
         try {
             String json = mapper.writeValueAsString(mockProducts);
-            response = request.createResponseBuilder(HttpStatus.BAD_REQUEST)
+            response = request.createResponseBuilder(HttpStatus.OK)
                     .header("Content-Type","application/json")
                     .body(json)
                     .build();
